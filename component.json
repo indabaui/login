@@ -1,0 +1,20 @@
+{
+  "name": "login",
+  "repo": "indabaui/login",
+  "description": "login modal",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "indabaui/agent": "*",
+    "component/domify": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "login.css"
+  ]
+}

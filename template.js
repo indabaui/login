@@ -1,0 +1,1 @@
+module.exports = '<form class="login">\n  <label>Username</label>\n  <input type="text" name="username" required placeholder="Username">\n  <label>Password</label>\n  <input type="password" name="password" required placeholder="Password">\n  <br>\n  <input type="submit" value="Log In">\n</form>\n';

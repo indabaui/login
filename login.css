@@ -1,0 +1,9 @@
+form.login {
+  border: 1px solid #555;
+}
+form.login label {
+  display: block;
+}
+form.login input {
+  margin-bottom: 20px;
+}

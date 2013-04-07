@@ -1,0 +1,24 @@
+{
+  "name": "login",
+  "version": "0.0.0",
+  "description": "login modal",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "express": "~3.1.1",
+    "indaba-auth": "~0.0.0"
+  },
+  "devDependencies": {
+    "indaba-auth": "0.0.0",
+    "express": "~3.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "Readme.md"
+}
