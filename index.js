@@ -1,8 +1,12 @@
 var domify = require('domify')
   , agent = require('agent')
+  , Dialog = require('dialog').Dialog
+
 
 var form = domify(require('./template'))[0];
-document.body.appendChild(form);
+var loginModal = new Dialog();
+modalBody = loginModal.el.find('.body');
+modalBody.html(form);
 
 form.onsubmit = function(e) {
   e.preventDefault();
@@ -12,10 +16,16 @@ form.onsubmit = function(e) {
   }
   agent.post('/login', payload, function(resp) {
     if (resp.status === 200) {
-      console.log("TOKEN!", resp.body.access_token)
+      exports.token = resp.body.access_token
+      console.log("TOKEN!", exports.token)
+      loginModal.hide();
     }
     else {
       console.log("login failed")
     }
   })
+}
+
+exports.show = function() {
+  loginModal.overlay().show()
 }

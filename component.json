@@ -6,6 +6,8 @@
   "keywords": [],
   "dependencies": {
     "indabaui/agent": "*",
+    "component/emitter": "*",
+    "component/dialog": "*",
     "component/domify": "*"
   },
   "development": {},

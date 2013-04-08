@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <title>login</title>
@@ -8,9 +9,12 @@
     <h1>Login</h1>
     <script src="build.js"></script>
 
+
     <script>
-      require('login');
+      window.login = require('login');
+      login.show();
     </script>
+    <button onclick="login.show()">login</button>
 
   </body>
 </html>
