@@ -24,12 +24,6 @@
   * `node example`
   * visit localhost:4000 + login
 
-## Roadmap
-
-  * broadcast login event on bus
-  * store + restore token
-  * ability to log out
-  * rename to auth
 
 ## License
 

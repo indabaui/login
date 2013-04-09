@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "indabaui/agent": "*",
+    "indabaui/facebook": "*",
     "component/emitter": "*",
     "component/dialog": "*",
     "component/cookie": "*",

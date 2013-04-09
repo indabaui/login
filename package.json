@@ -7,15 +7,13 @@
     "example": "example"
   },
   "dependencies": {
-    "express": "~3.1.1",
-    "indaba-auth": "~0.0.0"
   },
   "devDependencies": {
-    "indaba-auth": "0.0.0",
-    "express": "~3.1.1"
+    "express": "~3.1.1",
+    "indaba-auth": "0.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node example"
   },
   "repository": "",
   "author": "",
