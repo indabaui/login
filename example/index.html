@@ -4,17 +4,35 @@
     <title>login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="build.css" type="text/css">
+    <style>
+      body {
+        font: 16px/1.6 Helvetica;
+      }
+      pre {
+        background: #f7f7f7;
+        padding: 10px;
+        border: 1px dashed #555;
+      }
+    </style>
   </head>
   <body>
     <h1>Login</h1>
     <script src="build.js"></script>
 
+    <pre>no token</pre>
 
     <script>
+      var pre = document.querySelector('pre');
       window.login = require('login');
-      login.show();
+      login.on('token', function() {
+        pre.textContent = login.token;
+      });
+      login.on('logout', function() {
+        pre.textContent = login.token;
+      });
     </script>
     <button onclick="login.show()">login</button>
+    <button onclick="login.logout()">logout</button>
 
   </body>
 </html>
