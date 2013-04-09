@@ -16,6 +16,8 @@ login.show = function() {
 
 login.logout = function() {
   login.token = undefined;
+  form.username.value = '';
+  form.password.value = '';
   saveSessionCookie();
   login.emit('logout');
 }
@@ -24,6 +26,8 @@ login.logout = function() {
 var el = domify(require('./template'))[0];
 var form = el.querySelector('form');
 var loginWithFacebook = el.querySelector('[data-action="login-with-facebook"]');
+var badCredentials = el.querySelector('.bad-credentials');
+badCredentials.hidden = true;
 var loginModal = new Dialog();
 modalBody = loginModal.el.find('.body');
 modalBody.html(el);
@@ -63,13 +67,17 @@ function loadSessionCookie() {
 }
 
 function postPayload(payload) {
+  badCredentials.hidden = true;
   agent.post('/login', payload, function(resp) {
     if (resp.status === 200) {
       login.token = resp.body.access_token
       onToken();
     }
+    else if (resp.status === 401) {
+      badCredentials.hidden = false;
+    }
     else {
-      console.error("login failed", resp);
+      console.error("unknown login response", resp.status, resp);
     }
   })
 }
