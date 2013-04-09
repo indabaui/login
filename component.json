@@ -8,6 +8,7 @@
     "indabaui/agent": "*",
     "component/emitter": "*",
     "component/dialog": "*",
+    "component/cookie": "*",
     "component/domify": "*"
   },
   "development": {},
