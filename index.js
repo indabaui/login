@@ -14,6 +14,14 @@ login.show = function() {
   }
 }
 
+login.login = function(cb) {
+  if (login.token) {
+    cb(null);
+  } else {
+    loginModal.overlay().show();
+    login.on('token', cb);
+  }
+}
 login.logout = function() {
   login.token = undefined;
   form.username.value = '';
