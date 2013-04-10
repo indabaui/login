@@ -22,6 +22,6 @@
     "login.css"
   ],
   "files": [
-    "login-facebook.png"
+    "public/login-facebook.png"
   ]
 }
