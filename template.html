@@ -1,15 +1,16 @@
-<div>
-  <button data-action="login-with-facebook">Login with Facebook</button>
-  <hr>
-  <form class="login">
-    <label>Username</label>
-    <input type="text" name="username" required placeholder="Username">
-    <label>Password</label>
-    <input type="password" name="password" required placeholder="Password">
-    <br>
-    <input type="submit" value="Log In">
-  </form>
+<div class="login-body">
   <div class="bad-credentials">
     Incorrect username / password.
   </div>
+  <div class="facebook-box">
+    <img src="/login/img/facebook.png" class="login-with-facebook">
+  </div>
+  <form class="login">
+    <label>Username</label>
+    <input type="text" name="username" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <br>
+    <input type="submit" value="Log In" class="button">
+  </form>
 </div>

@@ -1,14 +1,36 @@
-form.login {
-  border: 1px solid #555;
+.login-body {
+  width: 300px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+.login-body * {
+  box-sizing: border-box;
+}
+.facebook-box {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.login-with-facebook {
+  cursor: pointer;
 }
 form.login label {
   display: block;
 }
 form.login input {
+  width: 229px;
   margin-bottom: 20px;
+  padding: 8px;
 }
 .bad-credentials {
   background: #f7f7f7;
   color: red;
   padding: 10px;
+}
+form.login input.button {
+  width: 90px;
+  background: #222;
+  color: white;
+  font-weight: bold;
+  height: 40px;
 }

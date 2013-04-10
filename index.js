@@ -25,7 +25,7 @@ login.logout = function() {
 
 var el = domify(require('./template'))[0];
 var form = el.querySelector('form');
-var loginWithFacebook = el.querySelector('[data-action="login-with-facebook"]');
+var loginWithFacebook = el.querySelector('.login-with-facebook');
 var badCredentials = el.querySelector('.bad-credentials');
 badCredentials.hidden = true;
 var loginModal = new Dialog();
