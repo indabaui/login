@@ -27,8 +27,17 @@
       login.on('logout', function() {
         pre.textContent = login.token;
       });
+      login.login(function() {
+        console.log("login one");
+      });
+      login.login(function() {
+        console.log("login two");
+      });
+      login.login(function() {
+        console.log("login three");
+      });
     </script>
-    <button onclick="login.show()">login</button>
+    <button onclick="login.login()">login</button>
     <button onclick="login.logout()">logout</button>
 
   </body>

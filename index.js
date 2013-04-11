@@ -8,19 +8,15 @@ var domify = require('domify')
 
 var login = module.exports = new Emitter();
 
-login.show = function() {
-  if (!login.token) {
-    loginModal.overlay().show()
-  }
-}
-
 login.login = function(cb) {
+  cb = cb || function(){}
   if (login.token) {
-    cb(null);
-  } else {
-    loginModal.overlay().show();
-    login.on('token', cb);
+    return cb(null);
   }
+  if (!loginModal.visible) {
+    loginModal.overlay().show();
+  }
+  login.on('token', cb);
 }
 login.logout = function() {
   login.token = undefined;
@@ -95,6 +91,13 @@ function onToken() {
   loginModal.hide();
   login.emit('token');
 }
+
+loginModal.on('show', function() {
+  loginModal.visible = true;
+});
+loginModal.on('hide', function() {
+  loginModal.visible = false;
+});
 
 
 // try to load your existing token
