@@ -1,10 +1,14 @@
 var domify = require('domify')
   , agent = require('agent')
+  , env = require('env')
   , Emitter = require('emitter')
   , Dialog = require('dialog').Dialog
   , cookie = require('cookie')
   , facebook = require('facebook')
 
+// required for now
+// see: https://github.com/indabaui/agent/issues/1
+agent._endpoint = env.lydian_endpoint;
 
 var login = module.exports = new Emitter();
 
@@ -16,7 +20,7 @@ login.login = function(cb) {
   if (!loginModal.visible) {
     loginModal.overlay().show();
   }
-  login.on('token', cb);
+  login.on('whoami', cb);
 }
 login.logout = function() {
   login.token = undefined;
@@ -89,7 +93,21 @@ function postPayload(payload) {
 function onToken() {
   saveSessionCookie();
   loginModal.hide();
+  whoami();
   login.emit('token');
+}
+
+function whoami() {
+  agent.inGet('/whoami', {access_token: login.token}, function(err, me) {
+    if (err) {
+      // invalid token - do not save
+      console.warn('indabaui-login: invalid token, whoami failed');
+      login.logout();
+      return;
+    }
+    login.whoami = me;
+    login.emit('whoami');
+  });
 }
 
 loginModal.on('show', function() {

@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
+    "indabaui/env": "*",
     "indabaui/agent": "*",
     "indabaui/facebook": "*",
     "component/emitter": "*",
