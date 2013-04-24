@@ -10,7 +10,6 @@ var authenticate = require('indaba-auth')(env)
 var app = express();
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/../build'));
-app.use(express.static(__dirname + '/../build/login/public'));
 app.use(express.bodyParser());
 app.use('/login', authenticate.middleware);
 

@@ -24,6 +24,7 @@
   * `node example`
   * visit localhost:4000 + login
 
+  The Facebook image will not appear in the example right now.
 
 ## License
 
